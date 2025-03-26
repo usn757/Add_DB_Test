@@ -45,9 +45,10 @@ join (
 ) o on p.product_id = o.product_id;
 
 # 7. 사용자별 총 주문 금액을 조회하세요.
-select user_id, sum(p.price * o.quantity)
-from orders o
-join products p on o.product_id = p.product_id
+select username, sum(price * quantity)
+from orders
+join users using (user_id)
+join products using (product_id)
 group by user_id;
 
 # 8. 평균 별점이 4점 이상인 상품의 이름과 평균 별점을 조회하세요.
