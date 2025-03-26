@@ -63,7 +63,7 @@ HAVING avg(rating) >= 4;
 select product_name
 from reviews
 join products using(product_id)
-group by review_id having count(review_id) >= 2;
+group by product_id having count(review_id) >= 2;
 
 # 10. T-shirt를 구매한 사용자의 이름과 이메일을 조회하세요.
 
